@@ -3,3 +3,9 @@
 ################################################################################
 
 /MultipleOF/UnitTestProject1/bin/Debug
+/MultipleOF/UnitTestProject1/obj/Debug
+/.vs
+/MultipleOF/.vs/MultipleOF/v16
+/MultipleOF/MultipleOF/bin/Debug/netstandard2.0
+/MultipleOF/MultipleOF/obj
+/MultipleOF/packages
