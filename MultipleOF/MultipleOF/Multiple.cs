@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MultipleOF
 {
@@ -32,6 +33,24 @@ namespace MultipleOF
                 prev = next - prev;
             } while (next < limit);
             return prev;
+        }
+        public List<int> LargestPrimeFactor(long n)
+        {
+            var ret = new List<int>();
+            var p = 2;
+            do
+            {
+                if(n % p == 0)
+                {
+                    ret.Add(p);
+                    n /= p;
+                }
+                else
+                {
+                    p++;
+                }
+            } while (n >= Math.Sqrt(p));
+            return ret;
         }
     }
 }
