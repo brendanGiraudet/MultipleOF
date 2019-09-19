@@ -22,5 +22,16 @@ namespace MultipleOF
             }
             return sum;
         }
+        public int FibonacciWithLimit(int limit)
+        {
+            var prev = 1;
+            var next = 2;
+            do
+            {
+                next += prev;
+                prev = next - prev;
+            } while (next < limit);
+            return prev;
+        }
     }
 }

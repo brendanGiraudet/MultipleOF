@@ -14,5 +14,18 @@ namespace UnitTestProject1
             var ret = multiple.SumOfMultiple(3,5,10);
             Assert.IsTrue(ret == 23);
         }
+
+        [TestMethod]
+        public void Fibonacci()
+        {
+            var ret = multiple.FibonacciWithLimit(10);
+            Assert.IsTrue(ret == 8);
+
+            ret = multiple.FibonacciWithLimit(25);
+            Assert.IsTrue(ret == 21);
+
+            ret = multiple.FibonacciWithLimit(60);
+            Assert.IsTrue(ret == 55);
+        }
     }
 }
