@@ -5,6 +5,13 @@ namespace MultipleOF
 {
     public class Multiple
     {
+        /// <summary>
+        /// Sum of a and b digits multiple
+        /// </summary>
+        /// <param name="a">First digit</param>
+        /// <param name="b">Second digit</param>
+        /// <param name="limit">Iteration number</param>
+        /// <returns>Sum of multiple a and b</returns>
         public int SumOfMultiple(int a, int b, int limit)
         {
             int sum = 0;
@@ -23,6 +30,11 @@ namespace MultipleOF
             }
             return sum;
         }
+        /// <summary>
+        /// Fibonacci with limit
+        /// </summary>
+        /// <param name="limit">Limit of the fibonacci calcul</param>
+        /// <returns>Value of the fibonacci calcul</returns>
         public int FibonacciWithLimit(int limit)
         {
             var prev = 1;
@@ -34,6 +46,11 @@ namespace MultipleOF
             } while (next < limit);
             return prev;
         }
+        /// <summary>
+        /// Split the digit n in multiple prime factor
+        /// </summary>
+        /// <param name="n">Digit to split</param>
+        /// <returns>List of prime factor</returns>
         public List<int> LargestPrimeFactor(long n)
         {
             var ret = new List<int>();
@@ -51,6 +68,24 @@ namespace MultipleOF
                 }
             } while (n >= Math.Sqrt(p));
             return ret;
+        }
+        /// <summary>
+        /// Search index where the fibonacci sequence contain nbDigit
+        /// </summary>
+        /// <param name="nbDigit">Number of sequence</param>
+        /// <returns>Index</returns>
+        public int SearchIndexFibonacciNumber(int nbDigit)
+        {
+            var prev = 1;
+            var next = 2;
+            var index = 3;
+            do
+            {
+                index++;
+                next += prev;
+                prev = next - prev;
+            } while (next.ToString().Length < nbDigit);
+            return index;
         }
     }
 }

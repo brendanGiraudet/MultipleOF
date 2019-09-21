@@ -42,5 +42,14 @@ namespace UnitTestProject1
             Assert.IsTrue(ret.Except(rep).ToList().Count == 0);
             Assert.IsTrue(rep.Except(ret).ToList().Count == 0);
         }
+        [TestMethod]
+        public void SearchIndexFibonacciNumber()
+        {
+            var ret = multiple.SearchIndexFibonacciNumber(3);
+            Assert.IsTrue(ret == 12);
+
+            //ret = multiple.SearchIndexFibonacciNumber(1000);
+           //Assert.IsTrue(ret == 12);
+        }
     }
 }
