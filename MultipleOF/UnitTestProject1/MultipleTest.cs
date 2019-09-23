@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
@@ -58,10 +59,10 @@ namespace UnitTestProject1
             Assert.IsTrue(ret == 2640);
         }
         [TestMethod]
-        public void FibonacciPairWithLimit()
+        public async Task FibonacciPairWithLimit()
         {
-            var ret = multiple.FibonacciPairWithLimit(4000000);
-            Assert.IsTrue(ret == 2640);
+            Assert.ThrowsException<Exception>( () => multiple.FibonacciPairWithLimit(ulong.MaxValue));
+         //   Assert.IsTrue(ret == ulong.MaxValue);
         }
     }
 }

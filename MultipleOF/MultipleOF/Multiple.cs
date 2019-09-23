@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MultipleOF
 {
@@ -112,17 +113,13 @@ namespace MultipleOF
         /// </summary>
         /// <param name="limit">Limit of the fibonacci calcul</param>
         /// <returns>Value of the fibonacci calcul</returns>
-        public ulong FibonacciPairWithLimit(ulong limit)
+        public async Task<ulong> FibonacciPairWithLimit(ulong limit)
         {
+            //TODO refacto
             try
             {
                 // check before F3
                 if (limit < 3)
-                {
-                    return 1;
-                }
-                // Check ulong Limit
-                if (limit >= ulong.MaxValue)
                 {
                     return 1;
                 }
@@ -138,10 +135,15 @@ namespace MultipleOF
                     {
                         sum += next;
                     }
+
+                    if(sum >= ulong.MaxValue)
+                    {
+                        throw new Exception("Max Value reach");
+                    }
+
                 } while (next < limit);
 
                 return sum;
-
             }
             catch (Exception ex)
             {
