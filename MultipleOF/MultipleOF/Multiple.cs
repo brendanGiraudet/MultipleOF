@@ -87,6 +87,12 @@ namespace MultipleOF
             } while (next.ToString().Length < nbDigit);
             return index;
         }
+        /// <summary>
+        /// Difference between squares of the first N natural numbers
+        /// and sum of the first N natural numbers
+        /// </summary>
+        /// <param name="limit">Number of iteration</param>
+        /// <returns>Difference value</returns>
         public double SumSquareDifference(int limit)
         {
             double sqrtValue = 1;
