@@ -57,7 +57,7 @@ namespace MultipleOF
             var p = 2;
             do
             {
-                if(n % p == 0)
+                if (n % p == 0)
                 {
                     ret.Add(p);
                     n /= p;
@@ -86,6 +86,20 @@ namespace MultipleOF
                 prev = next - prev;
             } while (next.ToString().Length < nbDigit);
             return index;
+        }
+        public double SumSquareDifference(int limit)
+        {
+            double sqrtValue = 1;
+            double sumValue = 1;
+            for (int i = 2; i <= limit; i++)
+            {
+                // squares of the first N natural numbers
+                sqrtValue += Math.Pow(i, 2);
+                // sum of the first N natural numbers
+                sumValue += i;
+            }
+
+            return Math.Pow(sumValue, 2) - sqrtValue;
         }
     }
 }

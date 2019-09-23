@@ -51,5 +51,11 @@ namespace UnitTestProject1
             //ret = multiple.SearchIndexFibonacciNumber(1000);
            //Assert.IsTrue(ret == 12);
         }
+        [TestMethod]
+        public void SumSquareDifference()
+        {
+            var ret = multiple.SumSquareDifference(10);
+            Assert.IsTrue(ret == 2640);
+        }
     }
 }
