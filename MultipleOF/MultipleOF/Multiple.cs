@@ -112,21 +112,42 @@ namespace MultipleOF
         /// </summary>
         /// <param name="limit">Limit of the fibonacci calcul</param>
         /// <returns>Value of the fibonacci calcul</returns>
-        public int FibonacciPairWithLimit(int limit)
+        public ulong FibonacciPairWithLimit(ulong limit)
         {
-            var prev = 1;
-            var next = 2;
-            var sum = next;
-            do
+            try
             {
-                next += prev;
-                prev = next - prev;
-                if(next % 2 == 0)
+                // check before F3
+                if (limit < 3)
                 {
-                    sum += next;
+                    return 1;
                 }
-            } while (next < limit);
-            return sum;
+                // Check ulong Limit
+                if (limit >= ulong.MaxValue)
+                {
+                    return 1;
+                }
+
+                ulong prev = 1;
+                ulong next = 2;
+                ulong sum = next;
+                do
+                {
+                    next += prev;
+                    prev = next - prev;
+                    if (next % 2 == 0)
+                    {
+                        sum += next;
+                    }
+                } while (next < limit);
+
+                return sum;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
 }
