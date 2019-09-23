@@ -107,5 +107,26 @@ namespace MultipleOF
 
             return Math.Pow(sumValue, 2) - sqrtValue;
         }
+        /// <summary>
+        /// Fibonacci with pair number and limit
+        /// </summary>
+        /// <param name="limit">Limit of the fibonacci calcul</param>
+        /// <returns>Value of the fibonacci calcul</returns>
+        public int FibonacciPairWithLimit(int limit)
+        {
+            var prev = 1;
+            var next = 2;
+            var sum = next;
+            do
+            {
+                next += prev;
+                prev = next - prev;
+                if(next % 2 == 0)
+                {
+                    sum += next;
+                }
+            } while (next < limit);
+            return sum;
+        }
     }
 }

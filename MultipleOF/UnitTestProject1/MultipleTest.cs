@@ -57,5 +57,11 @@ namespace UnitTestProject1
             var ret = multiple.SumSquareDifference(10);
             Assert.IsTrue(ret == 2640);
         }
+        [TestMethod]
+        public void FibonacciPairWithLimit()
+        {
+            var ret = multiple.FibonacciPairWithLimit(4000000);
+            Assert.IsTrue(ret == 2640);
+        }
     }
 }
